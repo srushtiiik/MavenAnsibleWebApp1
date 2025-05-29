@@ -27,12 +27,7 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.war', fingerprint:true
             }
         }
-    stage('Deploy') {
-    	steps {
-        dir('ansible') {
-            sh 'ansible-playbook playbook.yml -i hosts.ini'
-        }
-    }
+   
 }
 
 
